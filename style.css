@@ -14,7 +14,7 @@
 
 ::placeholder {
   color: var(--white);
-  opacity: 0.5; /* Firefox */
+  opacity: 0.5;
 }
 
 * {
@@ -29,16 +29,65 @@ body {
   line-height: 28px;
   background-color: var(--black);
   color: var(--gray-white);
+}
+
+.container {
+  margin-top: 130px;
+  width: 89%;
+  max-width: 1275px;
+  margin-left: auto;
+  margin-right: 0;
+  background-image: url("assets/desktop/image-host.jpg");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}
+
+.text-container {
+  background-color: var(--black);
+  max-width: 723px;
+}
+
+.flex-container {
   display: flex;
+  flex-direction: column;
 }
 
+h1 {
+  font-size: 52px;
+  line-height: 62px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: var(--green);
+  padding-top: 88px;
+  margin-bottom: 24px;
+}
+
+h1 span {
+  color: var(--white);
+}
+
+p {
+  display: block;
+  max-width: 445px;
+}
+
+.logo-div {
+  margin-bottom: 102px;
+  display: block;
+  margin-top: -30px;
+}
+
+.links {
+  padding-top: 64px;
+  display: flex;
+  max-width: 536px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*---------FORM------*/
 form {
-  /* border: 2px solid purple; */
   padding-top: 40px;
-}
-
-.input-mail {
-  padding-right: 133px;
 }
 
 button {
@@ -60,96 +109,54 @@ button:hover {
   background-color: var(--green-hover);
 }
 
+button {
+  margin-left: -170px;
+}
+
 .input-mail {
   background-color: var(--gray-black);
+  padding: 14px 225px 14px 32px;
 }
 
-h1 {
-  font-size: 52px;
-  line-height: 62px;
-  font-weight: 300;
-  text-transform: uppercase;
-  color: var(--green);
-  padding-top: 88px;
-  margin-bottom: 24px;
+/*----------DOTS------------*/
+.dots {
+  top: 730px;
+  right: 0px;
+  position: absolute;
 }
 
-h1 span {
-  color: var(--white);
-}
-
-p {
-  display: block; /*TODO:*/
-}
-
-.flex-container {
-  /* border: 2px solid blue; */
-  display: flex;
-  flex-direction: column;
-}
-/*
-.logo {
-  /* margin-top: 102px; */
-/* margin-bottom: 102px; /*TODO: check margin ..*/
-/*}*/
-
-.logo-div {
-  margin-bottom: 102px;
-}
-
-.text-container {
-  /* border: 2px solid yellow; */
-  background-color: var(--black);
-  /* border: 2px solid yellow; */
-  max-width: 723px;
-  /* margin-left: 0; */
-}
-.logo-div {
-  /* border: 2px solid yellow; */
-  display: block;
-}
-
-.container {
-  /* margin-top: 130px; */
-
-  width: 88%;
-  max-width: 1275px;
-  margin-left: auto;
-  margin-right: 0;
-  /* border: 2px solid red; */
-  background-image: url("assets/desktop/image-host.jpg");
-  background-repeat: no-repeat;
-  background-position: right;
-}
-
-.links {
-  padding-top: 64px;
-  display: flex;
-  max-width: 536px;
-  align-items: center;
-
-  justify-content: space-between;
-}
-
+/*-----------MEDIA QUERIES-----------*/
 @media screen and (max-width: 1180px) {
   .container {
     background-image: url("assets/tablet/image-host.jpg");
     background-repeat: no-repeat;
-    background-position: right;
+    background-position: top right;
   }
 }
+
+@media screen and (max-width: 1075px) {
+  .dots {
+    top: 900px;
+    left: 12%;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .container {
     width: 95%;
     max-width: 729px;
     margin-left: auto;
-    margin-left: 39px;
+    margin-right: 0;
   }
 
   .text-container {
     max-width: 635px;
   }
 
+  .logo-div,
+  .container {
+    margin-top: 0px;
+  }
   .logo {
     margin-top: 50px;
     margin-bottom: 102px;
@@ -161,17 +168,19 @@ p {
     padding-top: 93px;
     margin-bottom: 31px;
   }
-}
 
-p {
-  max-width: 445px;
-}
-
-@media screen and (max-width: 720px) {
-  .logo-div {
-    margin-bottom: 0px;
+  .dots {
+    left: calc(100% - 729px);
   }
+}
 
+@media screen and (max-width: 788px) {
+  .dots {
+    left: 6%;
+  }
+}
+
+@media screen and (max-width: 650px) {
   .container {
     background: linear-gradient(
         0deg,
@@ -182,39 +191,9 @@ p {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-  }
-
-  form {
-    order: 3;
-    padding-top: 0px;
-  }
-
-  .input-mail {
-    margin-bottom: 16px;
-  }
-  .links {
-    padding-top: 33px;
-    padding-bottom: 48px;
-    max-width: 100%;
-    justify-content: space-between;
-  }
-
-  .link-img {
-    width: 70%; /*TODO:*/
-  }
-
-  .container {
+    padding-bottom: 1px;
     width: 100%;
     margin: auto;
-  }
-
-  .logo-div {
-    text-align: center;
-  }
-
-  .logo {
-    margin-top: 62px;
-    margin-bottom: 0px;
   }
 
   body {
@@ -228,27 +207,103 @@ p {
     text-align: center;
     padding-top: 55px;
     margin-bottom: 16px;
-    /* letter-spacing: 0.9px; */
   }
 
   p {
     text-align: center;
     max-width: 100%;
   }
-  button {
-    width: 100%;
-    text-align: center;
-  }
-  .input-mail {
-    width: 100%;
-  }
 
   .text-container {
-    margin: 0 22px; /*TODO: 700px*/
+    margin: 0 24px;
     background-color: transparent;
   }
 
   .flex-container {
     margin: 0 auto;
   }
+
+  /*-----LOGO-----------*/
+  .logo-div {
+    margin-bottom: 0px;
+    text-align: center;
+  }
+
+  .logo {
+    margin-top: 62px;
+    margin-bottom: 0px;
+  }
+
+  /*----------FORM-----------*/
+  form {
+    order: 3;
+    padding-top: 0px;
+  }
+
+  button {
+    margin-left: auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  .input-mail {
+    background-color: var(--gray-black);
+    padding: 10px 27px;
+    margin-bottom: 16px;
+    width: 100%;
+  }
+
+  /*----------LINKS--------*/
+  .links {
+    padding-top: 33px;
+    padding-bottom: 48px;
+    max-width: 100%;
+    justify-content: space-between;
+  }
+
+  .link-img {
+    max-width: 80%;
+  }
+
+  /*-----DOTS------*/
+  .dots {
+    display: none;
+  }
 }
+
+/*----------------------------------*/
+/*CONTAINER-BORDERS-for-debugging*/
+/*----------------------------------*/
+/*
+.container {
+  border: 2px solid green;
+}
+.flex-container {
+  border: 2px solid blue;
+}
+.logo-div {
+  border: 2px solid red;
+}
+.text-container {
+  border: 2px solid yellow;
+}
+.dots {
+  border: 2px solid green;
+}
+@media screen and (max-width: 788px) {
+  .dots {
+    border: 2px solid purple;
+  }
+}
+@media screen and (max-width: 1075px) {
+  .dots {
+    border: 2px solid red;
+  }
+}
+@media screen and (max-width: 900px) {
+  .dots {
+    border: 2px solid yellow;
+  }
+}
+*/
+/*----------------------------------*/
