@@ -23,7 +23,8 @@ const validateEmail = function (email) {
   return re.test(email);
 };
 
-const doCheck = function () {
+const doCheck = function (event) {
+  event.preventDefault();
   removeMessage();
   const mail = document.querySelector(".input-mail").value;
   console.log(mail);
