@@ -74,8 +74,12 @@ p {
 
 .logo-div {
   margin-bottom: 102px;
-  display: block;
   margin-top: -30px;
+  display: inline-block;
+}
+
+.logo-div img {
+  display: block;
 }
 
 .links {
@@ -301,12 +305,12 @@ form p {
 /*----------------------------------*/
 /*CONTAINER-BORDERS-for-debugging*/
 /*----------------------------------*/
-/*
+/* 
 .container {
   border: 2px solid green;
 }
-*/
-/* .flex-container {
+
+.flex-container {
   border: 2px solid blue;
 }
 
@@ -316,9 +320,8 @@ form {
 
 form p {
   border: 2px solid red;
-} */
+} 
 
-/*
 .logo-div {
   border: 2px solid red;
 }

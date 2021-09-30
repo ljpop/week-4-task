@@ -15,11 +15,11 @@
   </head>
   <body>
     <div class="container">
-      <div class="logo-div">
-        <a href="#"
+      
+        <a href="#" class="logo-div"
           ><img src="assets/desktop/logo.svg" class="logo" alt="logo"
         /></a>
-      </div>
+      
       <div class="text-container">
         <h1>
           Publish your podcasts
@@ -31,7 +31,7 @@
             your podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket
             Casts and more!
           </p>
-          <form class="flex-item">
+          <form class="flex-item" onsubmit="doCheck(event)" novalidate>
             <input
               type="email"
               placeholder="Email address"
